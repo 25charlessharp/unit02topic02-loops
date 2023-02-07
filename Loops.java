@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.Arrays;
 public class Loops {
 
   public static void nHellos(int x){
@@ -60,8 +61,29 @@ public class Loops {
     return result;
   }
 
+
+  public static void getFactors(int n){
+    int x = 1;
+    int factors = 0;
+    for(x = 1; x <= n; x ++){
+      if(n % x == 0){
+        factors ++;
+      }
+    }
+    int [] array = new int [factors];
+    int addToArray = 0;
+    int z = 1;
+    for(z = 1; z <= n; z ++){
+      if(n % z == 0){
+        array[addToArray] = z;
+        addToArray++;
+      }
+    }
+    System.out.println(Arrays.toString(array));
+  }
+
   public static void main(String[] args) {
-    System.out.println(isPrime(59));
+    getFactors(24);
 
     // testing of static methods goes here
 
