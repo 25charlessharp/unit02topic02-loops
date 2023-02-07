@@ -36,18 +36,20 @@ public class Loops {
 
   public static void nRandoms(int x){
     int n = 1;
+    double sum2 = 0;
     for(n = 1; n<= x; n ++){
-      double sum = Math.random();
-      sum += sum;
-      double quotient = sum / x;
-      if( n == x){
-      System.out.println(quotient);
+      double sum1 = Math.random();
+      System.out.println("Random " + n +" "+ sum1);
+      sum2 += sum1;
+      double quotient = sum2 / x;
+      if(n == x){
+      System.out.println("The average is " + quotient);
       }
     }
   }
 
   public static void main(String[] args) {
-    nHellos(19);
+    nRandoms(8);
 
     // testing of static methods goes here
 
