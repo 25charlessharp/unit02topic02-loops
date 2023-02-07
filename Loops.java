@@ -47,9 +47,21 @@ public class Loops {
       }
     }
   }
+  
+
+  public static boolean isPrime(int x){
+    int n = 2;
+    boolean result = true;
+    for(n = 2; n < (x/2); n++){
+      if(x % n == 0){
+        result = false;
+      }
+    }
+    return result;
+  }
 
   public static void main(String[] args) {
-    nRandoms(8);
+    System.out.println(isPrime(59));
 
     // testing of static methods goes here
 
