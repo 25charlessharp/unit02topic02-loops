@@ -1,4 +1,4 @@
-import java.lang.Math;
+
 import java.util.Arrays;
 public class Loops {
 
@@ -82,8 +82,49 @@ public class Loops {
     System.out.println(Arrays.toString(array));
   }
 
+
+  private static int rollDie(){
+    int result = (int) (Math.random()*6) + 1;
+    return result;
+  }
+
+  public static void pepysSimulation(int n){
+    double number = 1000000;
+    double rollSixTimes = 0;
+    double rollTwelveTimes = 0;
+    double roll = 0;
+    for(roll = 0; roll < number; roll ++){
+      for(int a = 0; a < 6; a ++){
+        rollDie();
+        if(rollDie() == 1){
+          rollSixTimes++;
+          a = 6;
+        }
+      }
+    }
+    System.out.println("The percent you get when rolling a fair 6 sided die 6 times and at least getting a one is " + (rollSixTimes/number) * 100 + "%");
+    roll = 0;
+    int c = 0;
+    for(roll = 0; roll < number; roll ++){
+      for(int b = 0; b < 12; b ++){
+        rollDie();
+        if(rollDie() == 1){
+          c ++;
+        }
+        if (c == 2){
+          rollTwelveTimes ++;
+          c = 0;
+        }
+      }
+    }
+    System.out.println("The percent you get when rolling a fair 6 sided die 12 times and at least getting a one twice is " + (rollTwelveTimes/number) * 100 + "%");
+
+
+  }
+  
+
   public static void main(String[] args) {
-    getFactors(24);
+    pepysSimulation(1);
 
     // testing of static methods goes here
 
