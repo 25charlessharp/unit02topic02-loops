@@ -114,6 +114,7 @@ public class Loops {
         if (c == 2){
           rollTwelveTimes ++;
           c = 0;
+          b = 12;
         }
       }
     }
